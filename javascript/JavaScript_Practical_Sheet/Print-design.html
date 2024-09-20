@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Design</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    #designContainer {
+        margin-top: 20px;
+        padding: 20px;
+        padding-right: 100px;
+        border: 1px solid #000;
+        width: auto;
+        text-align: left;
+        font-weight: bold;
+        font-size: 16px;
+    }
+</style>
+
+<body>
+    <button id="printButton">Print Design</button>
+    <div id="designContainer"></div>
+
+    <script>
+        document.getElementById('printButton').addEventListener('click', function () {
+            var designContainer = document.getElementById('designContainer');
+            var design = `
+        <pre>
+            HTML stands for Hyper Text Markup Language
+
+            HTML is the standard markup language for Web pages
+
+            HTML elements are the building blocks of HTML pages
+
+            HTML elements are represented by <> tags
+        </pre>
+    `;
+            designContainer.innerHTML = design;
+        });
+
+    </script>
+</body>
+
+</html>

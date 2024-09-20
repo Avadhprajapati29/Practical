@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum of Two Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            height: 70vh;
+            margin-left: 90px;
+            background-color: #f0f0f0;
+        }
+
+        h2 {
+            font-weight: bold;
+            text-align: left !important;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(157, 42, 42, 0.13);
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 200px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>enter any tow number to diisplay which</h2>
+        <h2>number is minimum form then</h2>
+        <label for="">first number:</label>
+        <input type="number" id="number1" placeholder="Enter first number" />
+        <br><br>
+        <label for="">second number:</label>
+        <input type="number" id="number2" placeholder="Enter second number" />
+        <br><br>
+        <button onclick="displayMinimum()">Display</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        let input1 = document.getElementById("number1");
+        let input2 = document.getElementById("number2");
+        let print = document.getElementById("result");
+        function displayMinimum() {
+            if (number1.value === "" || number2.value === "") {
+                result.innerText = `Enter Number To Input field`
+                result.classList.add("error");
+                return;
+            }
+            result.classList.remove("error");
+            if (isNaN(number1.value) || isNaN(number2.value)) {
+                result.innerText = `Please enter valid number`
+                result.classList.add("error");
+            }
+            else {
+                let getMin = Math.min(Number(number1.value), Number(number2.value));
+                result.innerText = `${getMin} is minimum`
+            }
+        }
+        input1.addEventListener("input", minNum);
+        input2.addEventListener("input", minNum);
+    </script>
+
+
+</body>
+
+</html>
